@@ -1,7 +1,7 @@
 .banner {
     margin-top: -10vh;
     height: 80vh;
-    margin-bottom: -80px;
+    margin-bottom: -60px;
     color: white;
     object-fit: contain;
 }
@@ -53,3 +53,14 @@
         #111
     );
 }
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .banner{
+      margin-bottom: 50px; /* Add margin between the components */
+    }
+    .banner__button {
+        font-size: 0.9em; /* Adjust the font size */
+        padding: 8px 16px; /* Adjust the padding */
+      }
+  }

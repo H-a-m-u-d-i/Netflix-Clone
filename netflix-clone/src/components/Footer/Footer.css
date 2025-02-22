@@ -41,3 +41,49 @@
     font-size: 12px;
     margin-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+  .footer_inner_container {
+      width: 80%; /* Adjust width for better visibility on mobile */
+      border-top: #fff 1px solid;
+
+  }
+ .footer_data {
+      height: auto; /* Adjust height for mobile view */
+      padding: 20px 20px 20px 0; /* Add padding for better spacing */
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .footer_data ul {
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+      text-align: center;
+  }
+
+  .footer_data ul li {
+      margin-bottom: 10px; /* Add margin between list items */
+      font-size: 13px; /* Adjust font size for better readability */
+  }
+
+  .footer_icons {
+    width: 40%; /* Ensure the icons take up the full width */
+    justify-content: space-between; /* Center align the icons */
+    margin: 10px 0 0 0; /* Add margin for better spacing */
+  }
+
+  .footer_icons i {
+    margin: 0 15px; /* Add margin between icons */
+  }
+  .service_code {
+      width: 100%; /* Increase width for better visibility on mobile */
+      margin: 10px 0; /* Center the service code button */
+      padding: 10px; /* Add padding for better touch target */
+      font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  .copy_right {
+      font-size: 12px; /* Adjust font size for mobile view */
+      margin-bottom: 20px; /* Add margin for better spacing */
+  }
+}

@@ -38,3 +38,33 @@
     width: 150%;
     cursor: pointer;
 }
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .header_left ul li:nth-child(n+2):nth-child(-n+7) {
+        display: none; /* Hide the specified <li> elements */
+    }
+    .header_right ul li:nth-child(n+4){
+        display: none; /* Hide the specified <li> elements */
+    }
+    .header_outer_container {
+        padding: 0 20px; /* Add padding to the left and right */
+    }
+    .header_container {
+        width: 100%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    .header_right ul {
+        justify-content: space-around; /* Space out the icons evenly */
+        width: 100%; /* Ensure the icons take up the full width */
+    }
+
+    .header_right ul li {
+        flex: 1; /* Make each icon take equal space */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5em; /* Adjust the size of the icons */
+    }
+}

@@ -27,20 +27,26 @@ const Row = ( { title, fetchUrl, isLargeRow }) => {
 //************************************************************* */
 
 // Playing the trailer from youtube
-    const handleClick = (movie) => {
-        if(trailerUrl) {
-            setTrailerUrl('')
-        } else {
-            movieTrailer(movie?.name || movie?.title || movie?.original_name)
-                .then((url) => {
-                    console.log(url)
-                    const urlParams = new URLSearchParams(new URL(url).search)
-                    console.log(urlParams)
-                    console.log(urlParams.get('v'))
-                    setTrailerUrl(urlParams.get('v'))
-                })
-        }
+const handleClick = (movie) => {
+    if (trailerUrl) {
+        setTrailerUrl('');
+    } else {
+        movieTrailer(movie?.name || movie?.title || movie?.original_name)
+            .then((url) => {
+                try {
+                    const urlParams = new URLSearchParams(new URL(url).search);
+                    setTrailerUrl(urlParams.get('v'));
+                } catch (e) {
+                    console.error("Invalid URL", e);
+                    setTrailerUrl(''); // Clear the trailer URL if it's invalid
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching trailer", error);
+                setTrailerUrl(''); // Clear the trailer URL if there's an error
+            });
     }
+};
 /************************************************************* */
 // styling the youtube player
     const opts = {
